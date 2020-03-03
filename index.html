@@ -55,7 +55,7 @@
                 <div v-else-if="selectedTab === tabs[1]">
                     <div v-if="historys.length">
                         <ul class="list">
-                            <li v-for="item in historys">
+                            <li v-for="item in historys" v-on:click="onClickKeyword(item.keyword)">
                                 {{item.keyword}}
                             </li>
                         </ul>
