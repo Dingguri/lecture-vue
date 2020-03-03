@@ -34,6 +34,9 @@ new Vue({
             this.query = ''
             this.submitted = false
             this.searchResult = []
+        },
+        onClickTab(tab) {
+            this.selectedTab = tab
         }
     }
 })
