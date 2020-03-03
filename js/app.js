@@ -1,16 +1,19 @@
 import SearchModel from './models/SearchModel.js'
+import KeywordModel from './models/KeywordModel.js'
 
 new Vue({
     el: '#app',
     data: {
         query: '',
         submitted: false,
+        searchResult: [],
         tabs: ['추천 검색어', '최근 검색어'],
         selectedTab: '',
-        searchResult: []
+        keywords: [],
     },
     created() {
         this.selectedTab = this.tabs[0]
+        this.fetchKeyword()
     },
     methods: {
         onSubmit(e) {
@@ -37,6 +40,11 @@ new Vue({
         },
         onClickTab(tab) {
             this.selectedTab = tab
+        },
+        fetchKeyword() {
+            KeywordModel.list().then(data => {
+                this.keywords = data
+            })
         }
     }
 })
