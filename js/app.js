@@ -45,6 +45,10 @@ new Vue({
             KeywordModel.list().then(data => {
                 this.keywords = data
             })
+        },
+        onClickKeyword(keyword) {
+            this.query = keyword
+            this.search()
         }
     }
 })

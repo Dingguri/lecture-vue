@@ -43,7 +43,7 @@
                 <div v-if="selectedTab === tabs[0]">
                     <div v-if="keywords.length">
                         <ul class="list">
-                            <li v-for="(item, idx) in keywords">
+                            <li v-for="(item, idx) in keywords" v-on:click="onClickKeyword(item.keyword)">
                                 <span class="number">{{idx + 1}}</span> {{item.keyword}}
                             </li>
                         </ul>
