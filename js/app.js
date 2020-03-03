@@ -57,6 +57,10 @@ new Vue({
             HistoryModel.list().then(data => {
                 this.historys = data
             })
+        },
+        onClickRemoveHistory(keyword) {
+            HistoryModel.remove(keyword)
+            this.fetchHistory()
         }
     }
 })
