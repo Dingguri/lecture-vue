@@ -53,7 +53,16 @@
                     </div>
                 </div>
                 <div v-else-if="selectedTab === tabs[1]">
-                    최근 검색어 목록
+                    <div v-if="historys.length">
+                        <ul class="list">
+                            <li v-for="item in historys">
+                                {{item.keyword}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div v-else>
+                        최근 검색어가 없습니다.
+                    </div>
                 </div>
             </div>
         </div>
